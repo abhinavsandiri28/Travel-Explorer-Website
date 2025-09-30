@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Travel Explorer</title>
+  <link rel="stylesheet" href="travel-explorer.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="dot">TE</div>
+      <div>
+        <h1>Travel Explorer</h1>
+        <p class="lead">Explore destinations • View photos • Check weather</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <div class="panel">
+        <div class="controls">
+          <div class="search">
+            <input id="searchInput" placeholder="Search destinations or country (e.g. Paris, India)" />
+          </div>
+          <select id="filterRegion" class="select">
+            <option value="">All regions</option>
+            <option value="europe">Europe</option>
+            <option value="asia">Asia</option>
+            <option value="americas">Americas</option>
+            <option value="africa">Africa</option>
+          </select>
+        </div>
+
+        <div id="results" class="grid"></div>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <div class="panel">
+        <h3 style="margin-top:0">Weather Lookup</h3>
+        <p class="lead" style="margin-bottom:12px">Enter a city to fetch current weather.</p>
+        <div style="display:flex;gap:8px;margin-bottom:12px">
+          <input id="cityInput" placeholder="City name (e.g. New Delhi)" />
+          <button id="getWeather" class="select">Get</button>
+        </div>
+        <div id="weatherBox" style="display:none">
+          <div class="weather">
+            <div class="icon" id="wIcon">☀️</div>
+            <div class="meta">
+              <h2 id="wTemp">--°C</h2>
+              <p id="wDesc">--</p>
+            </div>
+          </div>
+          <p style="margin-top:12px;color:var(--muted);font-size:13px">Humidity: <span id="wHum">--</span>% • Wind: <span id="wWind">--</span> m/s</p>
+        </div>
+      </div>
+
+      <div style="height:16px"></div>
+
+      <div class="panel">
+        <h4 style="margin-top:0">Quick Picks</h4>
+        <div id="quickList"></div>
+      </div>
+    </aside>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="box">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <strong id="modalTitle">Gallery</strong>
+        <button id="closeModal" class="close">Close</button>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </div>
+
+  <footer>
+    Travel Explorer
+  </footer>
+
+  <script src="travel-explorer.js"></script>
+</body>
+</html>
